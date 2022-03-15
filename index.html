@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -12,7 +13,14 @@
   <link rel="stylesheet" href="css/index.css">
   <link rel="stylesheet" href="css/timer.css">
   <title>Indonesia</title>
+  <script type="module" src="./js/main.js"></script>
+  <script>
+  //   document.addEventListener('DOMContentLoaded', () => {
+  //     countdownTimer();
+  //   })
+  // </script>
 </head>
+
 <body>
   <header class="header">
     <div class="container header__container">
@@ -44,17 +52,20 @@
 
           <p class="hero__text">Действует скидка 20% на туры от 6&nbsp;человек</p>
 
-          <div class="hero__timer timer" data-timer-deadline="15/01/2022">
+          <div class="hero__timer timer" data-timer-deadline="2022/03/17 00:19">
             <p class="timer__title">До конца акции осталось:</p>
             <p class="timer__item timer__item_days">
               <span class="timer__count timer__count_days">2</span>
-              <span class="timer__units timer__units_days">дня</span></p>
+              <span class="timer__units timer__units_days">дня</span>
+            </p>
             <p class="timer__item timer__item_hours">
               <span class="timer__count timer__count_hours">05</span>
-              <span class="timer__units timer__units_hours">часов</span></p>
+              <span class="timer__units timer__units_hours">часов</span>
+            </p>
             <p class="timer__item timer__item_minutes">
               <span class="timer__count timer__count_minutes">12</span>
-              <span class="timer__units timer__units_minutes">минут</span></p>
+              <span class="timer__units timer__units_minutes">минут</span>
+            </p>
           </div>
 
           <button class="button hero__button">Забронировать</button>
@@ -76,7 +87,8 @@
             <img src="img/about/palm.jpg" alt="Пальмы" class="about__item about__item_b about__image">
             <img src="img/about/monkey.jpg" alt="Обезьяна" class="about__item about__item_c about__image">
             <img src="img/about/gazebo.jpg" alt="Беседка" class="about__item about__item_d about__image">
-            <img src="img/about/sunshine.jpg" alt="Солнечные лучи" class="about__item about__item_e about__image"></div>
+            <img src="img/about/sunshine.jpg" alt="Солнечные лучи" class="about__item about__item_e about__image">
+          </div>
         </div>
 
         <p class="section__text section__text_small about__text about__text_small about__grid-item about__grid-item_c">Индонезия расположилась на&nbsp;легендарных и известных своей довольно непохожей историей островах Юго-Восточной Азии – на&nbsp;Суматре, Яве, Сулавеси, Бали, отчасти на&nbsp;Борнео и на&nbsp;Новой Гвинее, а также на&nbsp;множестве более мелких островов Малайского архипелага.</p>
@@ -202,37 +214,43 @@
             <picture>
               <source srcset="img/album/1.avif" type="image/avif">
               <source srcset="img/album/1.webp" type="image/webp">
-              <img src="img/album/1.jpg" alt="Остров" class="album__image"></picture>
+              <img src="img/album/1.jpg" alt="Остров" class="album__image">
+            </picture>
           </li>
           <li class="album__item">
             <picture>
               <source srcset="img/album/2.avif" type="image/avif">
               <source srcset="img/album/2.webp" type="image/webp">
-              <img src="img/album/2.jpg" alt="Горы" class="album__image"></picture>
+              <img src="img/album/2.jpg" alt="Горы" class="album__image">
+            </picture>
           </li>
           <li class="album__item">
             <picture>
               <source srcset="img/album/3.avif" type="image/avif">
               <source srcset="img/album/3.webp" type="image/webp">
-              <img src="img/album/3.jpg" alt="Лодки" class="album__image"></picture>
+              <img src="img/album/3.jpg" alt="Лодки" class="album__image">
+            </picture>
           </li>
           <li class="album__item">
             <picture>
               <source srcset="img/album/4.avif" type="image/avif">
               <source srcset="img/album/4.webp" type="image/webp">
-              <img src="img/album/4.jpg" alt="Закат" class="album__image"></picture>
+              <img src="img/album/4.jpg" alt="Закат" class="album__image">
+            </picture>
           </li>
           <li class="album__item">
             <picture>
               <source srcset="img/album/5.avif" type="image/avif">
               <source srcset="img/album/5.webp" type="image/webp">
-              <img src="img/album/5.jpg" alt="Волны" class="album__image"></picture>
+              <img src="img/album/5.jpg" alt="Волны" class="album__image">
+            </picture>
           </li>
           <li class="album__item">
             <picture>
               <source srcset="img/album/6.avif" type="image/avif">
               <source srcset="img/album/6.webp" type="image/webp">
-              <img src="img/album/6.jpg" alt="Лагуна" class="album__image"></picture>
+              <img src="img/album/6.jpg" alt="Лагуна" class="album__image">
+            </picture>
           </li>
         </ul>
         <div class="album__left"></div>
@@ -323,7 +341,8 @@
               <a href="#" class="footer__socials-link footer__socials-link_facebook" aria-label="ссылка на facebook"></a>
             </li>
             <li class="footer__link">
-              <a href="#" class="footer__socials-link footer__socials-link_tg" aria-label="ссылка на telegram"></a></li>
+              <a href="#" class="footer__socials-link footer__socials-link_tg" aria-label="ссылка на telegram"></a>
+            </li>
           </ul>
         </div>
         <form action="#" class="footer__form">
@@ -345,4 +364,5 @@
     </div>
   </footer>
 </body>
+
 </html>
