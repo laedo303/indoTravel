@@ -31,6 +31,9 @@ export const countdownTimer = () => {
   };
 
 
+  const addZero = number => ((number < 10) ? ('0' + number) : number);
+
+
   const start = () => {
     const timer = getTimeRemaining();
     const days = timer.days;
@@ -38,8 +41,8 @@ export const countdownTimer = () => {
     const minutes = timer.minutes;
 
     daysNum.textContent = days;
-    hoursNum.textContent = (hours < 10) ? ('0' + hours) : hours;
-    minNum.textContent = (minutes < 10) ? ('0' + minutes) : minutes;
+    hoursNum.textContent = addZero(hours);
+    minNum.textContent = addZero(minutes);
 
     daysText.textContent = declOfNum(days, ['день', 'дня', 'дней']);
     hoursText.textContent = declOfNum(hours, ['час', 'часа', 'часов']);
