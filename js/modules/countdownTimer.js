@@ -33,14 +33,17 @@ export const countdownTimer = () => {
 
   const start = () => {
     const timer = getTimeRemaining();
+    const days = timer.days;
+    const hours = timer.hours;
+    const minutes = timer.minutes;
 
-    daysNum.textContent = timer.days;
-    hoursNum.textContent = timer.hours;
-    minNum.textContent = timer.minutes;
+    daysNum.textContent = days;
+    hoursNum.textContent = (hours < 10) ? ('0' + hours) : hours;
+    minNum.textContent = (minutes < 10) ? ('0' + minutes) : minutes;
 
-    daysText.textContent = declOfNum(timer.days, ['день', 'дня', 'дней']);
-    hoursText.textContent = declOfNum(timer.hours, ['час', 'часа', 'часов']);
-    minText.textContent = declOfNum(timer.minutes,
+    daysText.textContent = declOfNum(days, ['день', 'дня', 'дней']);
+    hoursText.textContent = declOfNum(hours, ['час', 'часа', 'часов']);
+    minText.textContent = declOfNum(minutes,
         ['минута', 'минуты', 'минут']);
 
 
