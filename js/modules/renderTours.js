@@ -88,6 +88,13 @@ export const renderTours = async () => {
   renderPeopleOption();
 
 
+  const declOfNum = (number, titles) => {
+    const cases = [2, 0, 1, 1, 1, 2];
+    return titles[(number % 100 > 4 && number % 100 < 20) ?
+      2 : cases[(number % 10 < 5) ? number % 10 : 5]];
+  };
+
+
   const showInfoTour = data => {
     const DateAndPeople = document.querySelector('.reservation__data');
     const price = document.querySelector('.reservation__price');
@@ -101,9 +108,14 @@ export const renderTours = async () => {
         price.textContent = '';
       } else {
         const tour = data.find(tour => reservationDate.value === tour['date']);
-        DateAndPeople.textContent = `${tour['date']}, ${countPeople} человек`;
+        DateAndPeople.textContent = `${tour['date']}, ${countPeople}
+        ${declOfNum(countPeople, ['человек', 'человека', 'человек'])}`;
 
-        price.textContent = (tour['price'] * countPeople);
+        price.textContent = new Intl.NumberFormat('ru', {
+          style: 'currency',
+          currency: 'RUB',
+          maximumFractionDigits: 0,
+        }).format(tour['price'] * countPeople);
       }
     });
 
