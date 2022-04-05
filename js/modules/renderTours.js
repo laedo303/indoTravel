@@ -108,8 +108,9 @@ export const renderTours = async () => {
         price.textContent = '';
       } else {
         const tour = data.find(tour => reservationDate.value === tour['date']);
-        DateAndPeople.textContent = `${tour['date']}, ${countPeople}
-        ${declOfNum(countPeople, ['человек', 'человека', 'человек'])}`;
+        DateAndPeople
+            .textContent =
+        `${tour['date']}, ${countPeople} ${declOfNum(countPeople, ['человек', 'человека', 'человек'])}`;
 
         price.textContent = new Intl.NumberFormat('ru', {
           style: 'currency',
