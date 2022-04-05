@@ -1,4 +1,4 @@
-export const sendData = () => {
+export const sendResevationForm = () => {
   const reservForm = document.querySelector('.reservation__form');
   const reservDate = document.querySelector('.reservation__data');
   const reservPrice = document.querySelector('.reservation__price');

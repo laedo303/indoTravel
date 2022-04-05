@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 export const renderTours = async () => {
   const tourDate = document.getElementById('tour__date');
   const reservationDate = document.getElementById('reservation__date');
