@@ -5,6 +5,7 @@ export const sendResevationForm = () => {
   const reservName = document.querySelector('#reservation__name');
   const reservPhone = document.querySelector('#reservation__phone');
 
+
   const xhrResponse = (body, callback) => {
     const xhr = new XMLHttpRequest();
     xhr.open('POST', 'https://jsonplaceholder.typicode.com/posts');
@@ -17,6 +18,7 @@ export const sendResevationForm = () => {
     });
 
     xhr.addEventListener('error', () => {
+      reservForm.textContent = `...Упс, что-то пошло не так`;
       console.log('error');
     });
 

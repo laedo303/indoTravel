@@ -1,6 +1,9 @@
 export const sendFooterForm = () => {
   const footerForm = document.querySelector('.footer__form');
   const footerInput = document.querySelector('.footer__input');
+  const footerFormTitle = document.querySelector('.footer__form-title');
+  const footerText = document.querySelector('.footer__text');
+  const footerInputWrap = document.querySelector('.footer__input-wrap');
 
   const xhrResponse = (body, callback) => {
     const xhr = new XMLHttpRequest();
@@ -14,6 +17,12 @@ export const sendFooterForm = () => {
     });
 
     xhr.addEventListener('error', () => {
+      footerFormTitle.textContent =
+      `...Упс, что-то пошло не так`;
+
+      footerText.remove();
+      footerInputWrap.remove();
+
       console.log('error');
     });
 
@@ -28,8 +37,13 @@ export const sendFooterForm = () => {
           email: footerInput.value,
         },
         (data) => {
-          footerForm.textContent =
+          footerFormTitle.textContent =
+          `Ваша заявка успешно отправлена`;
+
+          footerText.textContent =
           `Наши менеджеры свяжутся с вами в течении 3-х рабочих дней`;
+
+          footerInputWrap.remove();
         },
     );
   });

@@ -7,7 +7,6 @@ export const renderTours = async () => {
   const datesName = document.getElementsByName('dates');
   const peopleName = document.getElementsByName('people');
 
-  // ! getting data of all tours:
   const loadTours = async () => {
     const db = await fetch('./db.json');
     const data = await db.json();
