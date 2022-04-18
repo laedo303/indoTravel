@@ -1,11 +1,12 @@
+
 /* eslint-disable max-len */
 export const renderTours = async () => {
   const tourDate = document.getElementById('tour__date');
   const reservationDate = document.getElementById('reservation__date');
   const tourPeople = document.getElementById('tour__people');
   const reservPeople = document.getElementById('reservation__people');
-  const datesName = document.getElementsByName('dates');
-  const peopleName = document.getElementsByName('people');
+  const dates = document.getElementsByName('dates');
+  const peoples = document.getElementsByName('people');
 
   const loadTours = async () => {
     const db = await fetch('./db.json');
@@ -14,7 +15,7 @@ export const renderTours = async () => {
   };
   const loadToursData = await loadTours();
 
-  // ! create date selects:
+  // ! create options:
   const createFirstOption = (elem) => {
     const firstOption = document.createElement('option');
     firstOption.value = '';
@@ -29,6 +30,8 @@ export const renderTours = async () => {
     dateOption.textContent = elem;
     return dateOption;
   };
+
+  // ! create date select:
   const createTourDate = () => {
     tourDate.replaceChildren(createFirstOption('Выберите дату'));
     reservationDate.replaceChildren(createFirstOption('Выберите дату'));
@@ -47,14 +50,15 @@ export const renderTours = async () => {
   };
   createTourDate();
 
-  // ! create people selects:
+
+  // ! create people options:
   const renderPeopleOption = () => {
     tourPeople.replaceChildren(createFirstOption('Количество человек'));
     reservPeople.replaceChildren(createFirstOption('Количество человек'));
 
-    datesName.forEach(select => {
+    dates.forEach(select => {
       select.addEventListener('change', () => {
-        datesName.forEach(dateSelect => {
+        dates.forEach(dateSelect => {
           dateSelect.value = select.value;
         });
 
@@ -77,9 +81,9 @@ export const renderTours = async () => {
       });
     });
 
-    peopleName.forEach(peopleSelect => {
+    peoples.forEach(peopleSelect => {
       peopleSelect.addEventListener('change', () => {
-        peopleName.forEach(reservPeopleSelect => {
+        peoples.forEach(reservPeopleSelect => {
           reservPeopleSelect.value = peopleSelect.value;
         });
       });
@@ -96,19 +100,19 @@ export const renderTours = async () => {
 
 
   const showInfoTour = data => {
-    const DateAndPeople = document.querySelector('.reservation__data');
+    const dateAndPeople = document.querySelector('.reservation__data');
     const price = document.querySelector('.reservation__price');
-    DateAndPeople.textContent = '';
+    dateAndPeople.textContent = '';
     price.textContent = '';
 
     reservPeople.addEventListener('change', () => {
       const countPeople = parseInt(reservPeople.value);
       if (isNaN(countPeople)) {
-        DateAndPeople.textContent = '';
+        dateAndPeople.textContent = '';
         price.textContent = '';
       } else {
         const tour = data.find(tour => reservationDate.value === tour['date']);
-        DateAndPeople
+        dateAndPeople
             .textContent =
         `${tour['date']}, ${countPeople} ${declOfNum(countPeople, ['человек', 'человека', 'человек'])}`;
 
@@ -121,7 +125,7 @@ export const renderTours = async () => {
     });
 
     reservationDate.addEventListener('focus', () => {
-      DateAndPeople.textContent = '';
+      dateAndPeople.textContent = '';
       price.textContent = '';
     });
   };
