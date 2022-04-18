@@ -3,6 +3,8 @@ import {acc} from './modules/acc.js';
 import {burger} from './modules/burger.js';
 import {fly} from './modules/fly.js';
 import {renderTours} from './modules/renderTours.js';
+import {sendResevationForm} from './modules/sendResevationForm.js';
+import {sendFooterForm} from './modules/sendFooterForm.js';
 
 
 {
@@ -12,6 +14,8 @@ import {renderTours} from './modules/renderTours.js';
     burger();
     fly();
     renderTours();
+    sendResevationForm();
+    sendFooterForm();
   };
 
   init();
